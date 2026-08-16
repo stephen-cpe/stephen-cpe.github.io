@@ -1,0 +1,224 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+nav {
+    display: flex;
+    background: #2b2b2b;
+}
+
+nav button {
+    flex: 1;
+    padding: 15px;
+    background: #2b2b2b;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+nav button.active,
+nav button:hover {
+    background: #3c3c3c;
+}
+
+.tool-section {
+    display: none;
+    padding: 20px;
+}
+
+.tool-section.active {
+    display: block;
+}
+
+h2,
+#section-ip h2,
+#section-tree h2,
+#section-sorter h2 {
+    text-align: center;
+}
+
+/* Footer (shared) */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    background: #1e1e1e;
+    color: #8b949e;
+    border-top: 1px solid #2b2b2b;
+    margin-top: 2rem;
+}
+
+.site-footer a {
+    color: #58a6ff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Work In Progress Notice */
+.work-in-progress {
+    background: #ffdddd;
+    color: #333;
+    padding: 12px;
+    margin: 12px 0;
+    border-left: 4px solid #d6332f;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.4em;
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+.work-in-progress .fa-exclamation-triangle {
+    margin-right: 8px;
+}
+
+/* Shared styles for home button and lightbox */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.home-button a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.home-button a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.home-button a i {
+    margin-right: 8px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    height: 90%;
+}
+
+.lightbox-image-container {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #4CAF50;
+}
+
+.certificate-details {
+    width: 40%;
+    background: #2b2b2b;
+    border-left: 2px solid #444;
+    padding: 20px;
+    overflow-y: auto;
+    display: block;
+}
+
+.certificate-details-content h3 {
+    color: #4CAF50;
+    margin-top: 0;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.certificate-details-content p {
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+}
+
+.certificate-details-content p strong {
+    display: inline-block;
+    width: 80px;
+    color: #e0e0e0;
+}
+
+ @media (max-width: 1100px) {
+    .lightbox-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        height: 95%;
+        gap: 10px;
+    }
+    .lightbox-image-container {
+        max-width: 90%;
+        flex: 0 1 auto;
+    }
+    .certificate-details {
+        width: 90%;
+        border-left: none;
+        border-top: 2px solid #444;
+    }
+}
+
+/* WIP notice styling for dark mode */
+.wip-notice {
+    max-width: 800px;
+    background-color: rgba(255, 243, 205, 0.1);
+    border: 1px solid rgba(255, 234, 167, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff3cd;
+    margin-top: 15px;
+}

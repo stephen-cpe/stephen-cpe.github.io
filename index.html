@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Paul Jacildo</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .status.complete {
+            color: #4CAF50;
+        }
+
+        .certificate-link {
+            color: white !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="home-button">
+        <a href="#" title="Home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-home"></i> Home</a>
+    </div>
+
+    <div class="container">
+        <div class="profile">
+            <img src="photo.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <h1>Stephen Paul Jacildo</h1>
+            <p>Earned a Master of Science in Software Engineering (MSSE) from Quantic School of Business & Technology, graduating with Honors.</p>
+            <p class="wip-notice">
+                <strong>Work in Progress:</strong> This page is still under development and will be updated regularly as I continue my studies and projects.
+            </p>
+        </div>
+    </div>
+
+    <h2>Professional Certifications</h2>
+    <div id="professional-certifications-container" class="certifications-container">
+        <!-- Professional certifications will be dynamically loaded here -->
+    </div>
+
+    <h2>MSSE Coursework Report</h2>
+    <div class="msse-progress-wrapper">
+        <div class="msse-column">
+            <h3 class="core-header">CORE CURRICULUM</h3>
+            <div id="msse-progress-container">
+                <!-- MSSE courses will be dynamically loaded here -->
+            </div>
+        </div>
+        <div class="msse-column">
+            <h3 class="spec-header">SPECIALIZATIONS</h3>
+            <div id="specializations-container">
+                <!-- Specializations will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <h2>Other Courses Completed</h2>
+    <div id="other-courses-container">
+        <!-- Other courses will be dynamically loaded here -->
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="certificateLightbox" class="lightbox">
+        <span id="lightboxClose" class="lightbox-close">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="Certificate" style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+            </div>
+            <div id="certificateDetails" class="certificate-details lightbox-details">
+                <div id="certificateDetailsContent" class="certificate-details-content">
+                    <!-- Certificate details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/footer.js"></script>
+    <script src="data/certificates-data.js"></script>
+    <script src="data/course-data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>
