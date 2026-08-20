@@ -1,7 +1,14 @@
 // Certificate data extracted from certificate filenames
 // Format: Certificate-Name_ISSUER_MM_DD_YYYY.png (dash-joined name, underscore section separators)
 // Month is 0-indexed (January = 0). dateFormatted is computed at render time.
+
 const certificatesData = [
+    {
+        filename: "Network-Protocols_QUANTIC_08_20_2026.png",
+        name: "Network Protocols",
+        issuer: "QUANTIC",
+        date: new Date(2026, 7, 20),
+    },
     {
         filename: "Network-Fundamentals_QUANTIC_08_16_2026.png",
         name: "Network Fundamentals",
