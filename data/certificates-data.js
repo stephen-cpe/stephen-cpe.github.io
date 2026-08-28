@@ -4,6 +4,24 @@
 
 const certificatesData = [
     {
+        filename: "HTML-And-CSS-Layouts_QUANTIC_08_28_2026.png",
+        name: "HTML and CSS Layouts",
+        issuer: "QUANTIC",
+        date: new Date(2026, 7, 28),
+    },
+    {
+        filename: "HTML-And-CSS-Basics_QUANTIC_08_25_2026.png",
+        name: "HTML and CSS Basics",
+        issuer: "QUANTIC",
+        date: new Date(2026, 7, 25),
+    },
+    {
+        filename: "Developing-And-Reaching-Your-Goals_QUANTIC_08_23_2026.png",
+        name: "Developing and Reaching Your Goals",
+        issuer: "QUANTIC",
+        date: new Date(2026, 7, 23),
+    },
+    {
         filename: "Network-Protocols_QUANTIC_08_20_2026.png",
         name: "Network Protocols",
         issuer: "QUANTIC",
