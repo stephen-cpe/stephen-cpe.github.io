@@ -1,3 +1,25 @@
+// Renders the site footer from the links defined in data/footer-links.js.
+// footer.html supplies the <footer class="site-footer"> shell; its links are
+// always generated here so the list is never duplicated.
+
+function renderFooterLinks() {
+    if (typeof footerLinks === 'undefined') {
+        console.error('footerLinks is undefined: data/footer-links.js failed to load');
+        return '';
+    }
+
+    const pathname = window.location.pathname;
+
+    return footerLinks
+        .filter(link => (!link.showOn || pathname.endsWith(link.showOn)) &&
+                        (!link.hideOn || !pathname.endsWith(link.hideOn)))
+        .map(link => {
+            const target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+            return `<a href="${link.href}"${target}>${link.label}</a>`;
+        })
+        .join(' |\n    ');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const footerContainer = document.createElement('div');
     footerContainer.id = 'footer-container';
@@ -10,34 +32,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return response.text();
         })
-        .then(data => {
-            if (document.getElementById('footer-container')) {
-                // On certificates.html, swap CERTIFICATES link for HOME link
-                let footerContent = data;
-                if (window.location.pathname.endsWith('certificates.html')) {
-                    footerContent = footerContent.replace('<a href="certificates.html">CERTIFICATES</a>', '<a href="index.html">HOME</a>');
-                }
-                document.getElementById('footer-container').innerHTML = footerContent;
+        .then(template => {
+            const parsed = new DOMParser().parseFromString(template, 'text/html');
+            const footer = parsed.querySelector('.site-footer');
+            if (footer) {
+                footer.innerHTML = renderFooterLinks();
             }
+            footerContainer.innerHTML = parsed.body.innerHTML;
         })
         .catch(error => {
-            console.error('There has been a problem with your fetch operation: error');
-            const fallbackFooter = document.createElement('footer');
-            fallbackFooter.className = 'site-footer';
-            let fallbackContent = `
-    <a href="https://github.com/stephen-cpe/study-and-learn" target="_blank">PROJECT 1</a> |
-    <a href="https://github.com/stephen-cpe/notebook-project" target="_blank">PROJECT 2</a> |
-    <a href="https://github.com/stephen-cpe/inventory_management_system" target="_blank">PROJECT 3</a> |
-    <a href="https://github.com/stephen-cpe/eternal_fusion_pavilion" target="_blank">PROJECT 4</a> |
-    <a href="#">PROJECT 5</a> |
-    <a href="https://github.com/stephen-cpe/meteoric-garden-shop-v4" target="_blank">PROJECT 6</a> |
-    <a href="certificates.html">CERTIFICATES</a> |
-    <a href="https://stephen-cpe.github.io/web-tools/" target="_blank">WEB TOOLS</a>
+            console.error('There has been a problem with your fetch operation: ' + error);
+            footerContainer.innerHTML = `
+    <footer class="site-footer">
+        ${renderFooterLinks()}
+    </footer>
 `;
-            if (window.location.pathname.endsWith('certificates.html')) {
-                fallbackContent = fallbackContent.replace('<a href="certificates.html">CERTIFICATES</a>', '<a href="index.html">HOME</a>');
-            }
-            fallbackFooter.innerHTML = fallbackContent;
-            document.body.appendChild(fallbackFooter);
         });
 });

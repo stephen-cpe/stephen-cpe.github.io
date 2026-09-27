@@ -4,6 +4,20 @@
 
 const certificatesData = [
     {
+        filename: "AI-Capabilities-And-Limitations_CLAUDE_ACADEMY_09_27_2026.png",
+        name: "AI Capabilities and Limitations",
+        issuer: "CLAUDE ACADEMY",
+        date: new Date(2026, 8, 27),
+        verifyUrl: "https://academy.claude.com/verify/322bf3ec27de94dc367d4f15a84ba02e",
+    },
+    {
+        filename: "AI-Fluency-Framework-And-Foundations_CLAUDE_ACADEMY_09_26_2026.png",
+        name: "AI Fluency Framework and Foundations",
+        issuer: "CLAUDE ACADEMY",
+        date: new Date(2026, 8, 26),
+        verifyUrl: "https://academy.claude.com/verify/d4d7dc8c54bdb055f6a7f773cee92378",
+    },
+    {
         filename: "HTML-And-CSS-Layouts_QUANTIC_08_28_2026.png",
         name: "HTML and CSS Layouts",
         issuer: "QUANTIC",

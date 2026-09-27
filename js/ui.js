@@ -30,6 +30,10 @@ class Lightbox {
         if (cert.parchmentUrl) {
             parchmentLinkHtml = `<p><a href="${cert.parchmentUrl}" target="_blank" rel="noopener noreferrer" class="certificate-link">View on Parchment</a></p>`;
         }
+        let verifyLinkHtml = '';
+        if (cert.verifyUrl) {
+            verifyLinkHtml = `<p><a href="${cert.verifyUrl}" target="_blank" rel="noopener noreferrer" class="certificate-link">Verify Certificate</a></p>`;
+        }
         const dateFormatted = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(cert.date);
         this.lightboxDetails.innerHTML = `
             <h3>${cert.name}</h3>
@@ -39,6 +43,7 @@ class Lightbox {
             <p><strong>Filename:</strong> ${cert.filename}</p>
             ${credlyLinkHtml}
             ${parchmentLinkHtml}
+            ${verifyLinkHtml}
         `;
         this.lightbox.classList.add('active');
         this.active = true;
