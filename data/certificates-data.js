@@ -8,7 +8,7 @@ const certificatesData = [
         name: "AI For Product Managers",
         issuer: "CODECADEMY",
         date: new Date(2026, 10, 9),
-        verifyUrl: "https://www.codecademy.com/verify/944dbbe81a6818629060cabdf97cc7ff",
+        verifyUrl: "https://www.codecademy.com/profiles/stpnpl/certificates/6ac59b8db919050001cf5d0d",
     },
     {
         filename: "AI-Fluency-For-Builders_CLAUDE_ACADEMY_10_01_2026.png",
