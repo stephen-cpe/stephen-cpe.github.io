@@ -4,6 +4,20 @@
 
 const certificatesData = [
     {
+        filename: "AI-For-Product-Managers_CODECADEMY_11_09_2026.png",
+        name: "AI For Product Managers",
+        issuer: "CODECADEMY",
+        date: new Date(2026, 10, 9),
+        verifyUrl: "https://www.codecademy.com/verify/944dbbe81a6818629060cabdf97cc7ff",
+    },
+    {
+        filename: "AI-Fluency-For-Builders_CLAUDE_ACADEMY_10_01_2026.png",
+        name: "AI Fluency for Builders",
+        issuer: "CLAUDE ACADEMY",
+        date: new Date(2026, 9, 1),
+        verifyUrl: "https://academy.claude.com/verify/944dbbe81a6818629060cabdf97cc7ff",
+    },
+    {
         filename: "AI-Capabilities-And-Limitations_CLAUDE_ACADEMY_09_27_2026.png",
         name: "AI Capabilities and Limitations",
         issuer: "CLAUDE ACADEMY",
